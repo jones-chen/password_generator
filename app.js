@@ -9,9 +9,18 @@ const port = 3000
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))  //讀取main.handlebars作為樣板佈局/主要佈局
 app.set('view engine', 'handlebars') //根據這裡的設定當作副檔名
 
-// 設定路由
+// 資料載入
+app.use(express.urlencoded({ extended: true }))
+
+// 設定路由(首頁)
 app.get('/', (req, res) => {
   res.render('index') 
+})
+
+// 送出表單(POST)
+app.post('/', (req, res) => {
+  console.log('req.body', req.body)
+  res.render('index')
 })
 
 // 監聽
