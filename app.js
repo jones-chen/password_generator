@@ -25,7 +25,7 @@ app.post('/', (req, res) => {
 
   const password = generatePassword(options)
   console.log(`Password is ${password}`)
-  res.render('index',{password : password, options:options})
+  res.render('index',{password, options})
 })
 
 // 監聽

@@ -40,7 +40,12 @@ function generatePassword(options) {
     )
   }
 
-  // start generating password
+  // Check (防止空陣列，沒有符號的狀況)
+  if (collection.length === 0) {
+    return '沒有字元可使用(There is no valid character in your selection)'
+  }
+
+  // 從collection開始產生密碼（start generating password）
   let password = ''
   for (let i = 0; i < Number(options.length); i++) {
     password += sample(collection)
@@ -48,6 +53,7 @@ function generatePassword(options) {
 
   // return the generated password
   return password
+
 }
 
 //建立模組
