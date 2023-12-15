@@ -5,7 +5,7 @@ function sample(array) {
 }
 
 // define generatePassword function
-function generatePassword() {
+function generatePassword(options) {
   // define things user might want
   const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz'
   const upperCaseLetters = lowerCaseLetters.toUpperCase()
@@ -49,3 +49,6 @@ function generatePassword() {
   // return the generated password
   return password
 }
+
+//建立模組
+module.exports = generatePassword

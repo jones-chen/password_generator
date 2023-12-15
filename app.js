@@ -2,6 +2,7 @@
  //載入套件
 const express = require('express')
 const exphbs = require('express-handlebars')
+const generatePassword = require('./generate_password.js')
 const app = express()
 const port = 3000
 
@@ -19,7 +20,7 @@ app.get('/', (req, res) => {
 
 // 送出表單(POST)
 app.post('/', (req, res) => {
-  console.log('req.body', req.body)
+  console.log(`Password is ${generatePassword(req.body)}`)
   res.render('index')
 })
 
