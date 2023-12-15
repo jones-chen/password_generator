@@ -20,8 +20,12 @@ app.get('/', (req, res) => {
 
 // 送出表單(POST)
 app.post('/', (req, res) => {
-  console.log(`Password is ${generatePassword(req.body)}`)
-  res.render('index')
+  const options = req.body
+  // console.log(options)
+
+  const password = generatePassword(options)
+  console.log(`Password is ${password}`)
+  res.render('index',{password : password, options:options})
 })
 
 // 監聽
